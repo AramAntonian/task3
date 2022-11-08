@@ -21,7 +21,7 @@ function GetData(){
     
     
    
-    return <MainHTML stateInfo={stateInfo} state = {state} handelSwitch = {handelSwitch}/>
+    return <MainHTML stateInfo={stateInfo} state = {idx === states.length-1?states[0]:states[idx+1]} handelSwitch = {handelSwitch}/>
 
 }
 
