@@ -1,7 +1,8 @@
-import { useState } from "react"
+import { Fragment, useState } from "react"
 import {useEffect} from "react"
 import "./style.css"
 import MainHTML from "./MainHTML"
+import Rechart from "./Rechart"
 
 let states = ["ak","al","ar","as","az","ca"]
 let idx = 0
@@ -21,7 +22,12 @@ function GetData(){
     
     
    
-    return <MainHTML stateInfo={stateInfo} state = {idx === states.length-1?states[0]:states[idx+1]} handelSwitch = {handelSwitch}/>
+    return (
+        <>
+            <MainHTML stateInfo={stateInfo} state = {idx === states.length-1?states[0]:states[idx+1]} handelSwitch = {handelSwitch}/>
+            <Rechart data = {stateInfo} />
+        </>
+    )
 
 }
 
